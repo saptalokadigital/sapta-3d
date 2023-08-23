@@ -1,13 +1,13 @@
 "use client";
 import { Label, Textarea, TextInput, Select } from "flowbite-react";
 
-async function getDataInformation() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/informs`);
-  return res.json();
-}
+// async function getDataInformation() {
+//   const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/informs`);
+//   return res.json();
+// }
 
 export default async function Contact() {
-  const dataInformation = await getDataInformation()
+  // const dataInformation = await getDataInformation()
 
   return (
     <>
@@ -93,11 +93,11 @@ export default async function Contact() {
             VISIT US IN OUR LOCATION
           </h1>
           <h3 className="font-bold md:text-xl text-xs text-blue-800 mb-4">
-            {dataInformation.data[0].attributes.address}
+            asdddddd
           </h3>
         </div>
         <iframe
-          src={dataInformation.data[0].attributes.maps_link}
+          src={"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3947.0315621223776!2d107.55062541147525!3d-6.922290885939612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e73338de6e1f%3A0x2124ffb9cb7ee4ad!2sPT%20SAPTALOKA%20DIGITAL%20INDONESIA!5e0!3m2!1sid!2sid!4v1692766934104!5m2!1sid!2sid"}
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"

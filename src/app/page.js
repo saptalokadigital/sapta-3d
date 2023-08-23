@@ -4,19 +4,19 @@ import Card from "@/components/Card";
 import BlogCard from "@/components/BlogCard";
 import { cardContent } from "./content";
 
-async function getDataBlog(){
- const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/blogs?populate=image&pagination[start]=0&pagination[limit]=3&sort=id:desc`,{ cache: "no-store" })
- return res.json()
-}
+// async function getDataBlog(){
+//  const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/blogs?populate=image&pagination[start]=0&pagination[limit]=3&sort=id:desc`,{ cache: "no-store" })
+//  return res.json()
+// }
 
-async function getDataPartner(){
- const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/partners?populate=logo`)
- return res.json()
-}
+// async function getDataPartner(){
+//  const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/partners?populate=logo`)
+//  return res.json()
+// }
 
 export default async function Home() {
-  const dataBlog = await getDataBlog()
-  const dataPartner = await getDataPartner()
+  // const dataBlog = await getDataBlog()
+  // const dataPartner = await getDataPartner()
 
   return (
     <>
@@ -30,12 +30,13 @@ export default async function Home() {
         </h3>
       </div>
       <div className="flex justify-center flex-wrap md:flex-nowrap">
-        {
-          cardContent.map((a,key)=>{
-            return(
-              <Card url={a.url} title={a.title} desc={a.desc} key={key}/>
-            )})
-        }
+        
+          
+              <Card url={"/images/home/core_business/bdigital.png"} title={"ss"} desc={"ssks"} />
+              <Card url={"/images/home/core_business/dmarket.png"} title={"ss"} desc={"sss"}/>
+              <Card url={"/images/home/core_business/it.png"} title={"ss"} desc={"sss"}/>
+          
+        
       </div>
 
       <div className="bg-no-repeat flex justify-end my-14 md:my-24 w-full h-1/6 bg-[url('/images/home/core_value/bg.png')]">
@@ -45,26 +46,32 @@ export default async function Home() {
         />
       </div>
       <div>
-         <Slide logo={dataPartner.data[0].attributes.logo.data}/>
+         <Slide logo={["/images/home/partner/image 7.png","/images/home/partner/image 9.png","/images/home/partner/image 10.png"]}/>
       </div>  
       <div className="text-center md:mb-6 mb-3">
         <h1 className="md:my-10 my-5 font-bold md:text-4xl text-xl">LASTEST NEWS</h1>
         <div className="w-full overflow-auto">
         <div className="flex md:w-full w-[600px] justify-center md:justify-evenly">
-          {
-            dataBlog.data.map((a,key)=>{
-              const title = a.attributes.title
-              const slug = a.attributes.slug
-              const image = a.attributes.image.data[0].attributes.url
-              return(
+     
                 <BlogCard
-                  title={title}
-                  image={process.env.NEXT_PUBLIC_URL+image}
-                  slug={slug}
-                  key={key}
+                  title={"sss"}
+                  image={"sdsd"}
+                  slug={"sas"}
+                  key={"aasa"}
                 />
-              )})
-          }
+                <BlogCard
+                  title={"sss"}
+                  image={"sdsd"}
+                  slug={"sas"}
+                  key={"aasa"}
+                />
+                <BlogCard
+                  title={"sss"}
+                  image={"sdsd"}
+                  slug={"sas"}
+                  key={"aasa"}
+                />
+          
         </div>
         </div>
       </div>

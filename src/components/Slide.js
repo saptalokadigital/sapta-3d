@@ -15,14 +15,14 @@ export default function Slide({ logo }) {
         >
           {
           join.map((a, key) => {
-            const src = a.attributes.url
+            // const src = a.attributes.url
             return (
-              <div key={key} className="slide">
-                <img className="img-slide mx-25" src={process.env.NEXT_PUBLIC_URL+src} />
+              <div className="slide">
+                <img className="img-slide mx-25" src={a} key={key}/>
               </div>
             );
           })
-          }
+        }
         </div>
       </div>
     </div>

@@ -19,6 +19,11 @@ export default function Headers(){
         <Navbar.Toggle />
       </div>
       <Navbar.Collapse className="justify-center">
+      <Navbar.Link
+          className="md:mx-16 text-xl font-bold"
+          href="/">
+          HOME
+        </Navbar.Link>
         <Navbar.Link
           className="md:mx-16 text-xl font-bold"
           href="/about">

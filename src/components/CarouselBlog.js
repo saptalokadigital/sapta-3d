@@ -4,18 +4,18 @@ import { useEffect, useState } from "react"
 import BlogCardLS from "./BlogCardLS"
 
 export default function CarouselBlog(){
-    const [carousel,setCarousel] = useState([])
+    // const [carousel,setCarousel] = useState([])
 
-    useEffect(async ()=>{
-        const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/blogs?populate=image&pagination[start]=0&pagination[limit]=5&sort=id:desc`,{ cache: "no-store" })
-        const data = await res.json()
-        setCarousel(data.data)
-    },[])
+    // useEffect(async ()=>{
+    //     const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/blogs?populate=image&pagination[start]=0&pagination[limit]=5&sort=id:desc`,{ cache: "no-store" })
+    //     const data = await res.json()
+    //     setCarousel(data.data)
+    // },[])
 
     return(
     <div className="h-40 md:h-80 border">
      <Carousel>
-           {
+           {/* {
                 carousel.map((a,key)=>{
                   const title = a.attributes.title
                   const slug = a.attributes.slug
@@ -25,7 +25,11 @@ export default function CarouselBlog(){
                     <BlogCardLS image={process.env.NEXT_PUBLIC_URL+image} slug={slug} title={title} content={content} key={key}/>
                   )
                 })
-            }
+            } */}
+            <BlogCardLS image={""} slug={""} title={"ssasdasd"} content={"asdasdasd"}/>
+            <BlogCardLS image={""} slug={""} title={"ssasdasd"} content={"asdasdasd"}/>
+            <BlogCardLS image={""} slug={""} title={"ssasdasd"} content={"asdasdasd"}/>
+
     </Carousel>
    </div>
     )

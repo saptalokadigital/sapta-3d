@@ -1,23 +1,23 @@
 import BlogCard from "@/components/BlogCard";
 import CarouselBlog from "@/components/CarouselBlog";
 
-async function getDataBlogStory() {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_URL}/api/blogs?populate=image&filters[category][$eq]=story&pagination[start]=0&pagination[limit]=3&sort=id:desc`,{ cache: "no-store" }
-  );
-  return res.json();
-}
+// async function getDataBlogStory() {
+//   const res = await fetch(
+//     `${process.env.NEXT_PUBLIC_URL}/api/blogs?populate=image&filters[category][$eq]=story&pagination[start]=0&pagination[limit]=3&sort=id:desc`,{ cache: "no-store" }
+//   );
+//   return res.json();
+// }
 
-async function getDataBlogTutorial() {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_URL}/api/blogs?populate=image&filters[category][$eq]=tutorial&pagination[start]=0&pagination[limit]=3&sort=id:desc`,{ cache: "no-store" }
-  );
-  return res.json();
-}
+// async function getDataBlogTutorial() {
+//   const res = await fetch(
+//     `${process.env.NEXT_PUBLIC_URL}/api/blogs?populate=image&filters[category][$eq]=tutorial&pagination[start]=0&pagination[limit]=3&sort=id:desc`,{ cache: "no-store" }
+//   );
+//   return res.json();
+// }
 
 export default async function Blog() {
-  const dataBlogStory = await getDataBlogStory();
-  const dataBlogTutorial = await getDataBlogTutorial();
+  // const dataBlogStory = await getDataBlogStory();
+  // const dataBlogTutorial = await getDataBlogTutorial();
   
 
   return (
@@ -46,7 +46,7 @@ export default async function Blog() {
         />
         <div className="overflow-auto w-full">
           <div className="flex flex-nowrap justify-evenly md:w-full w-[640px] md:h-auto col-start-2">
-            {dataBlogStory.data.map((a, key) => {
+            {/* {dataBlogStory.data.map((a, key) => {
               const title = a.attributes.title;
               const slug = a.attributes.slug;
               const image = a.attributes.image.data[0].attributes.url;
@@ -58,7 +58,25 @@ export default async function Blog() {
                   key={key}
                 />
               );
-            })}
+            })} */}
+             <BlogCard
+                  image={""}
+                  title={"asdasdasd"}
+                  slug={""}
+                
+                />
+                 <BlogCard
+                  image={""}
+                  title={"asdasdasd"}
+                  slug={""}
+                
+                />
+                 <BlogCard
+                  image={""}
+                  title={"asdasdasd"}
+                  slug={""}
+                
+                />
           </div>
         </div>
       </div>
@@ -74,7 +92,7 @@ export default async function Blog() {
       <div className="bg-cover w-full grid grid-cols-2 md:flex">
         <div className="overflow-auto w-full">
           <div className="flex flex-nowrap flex-row-reverse justify-evenly md:w-full md:h-auto w-[640px] col-start-1">
-            {dataBlogTutorial.data.map((a, key) => {
+            {/* {dataBlogTutorial.data.map((a, key) => {
               const title = a.attributes.title;
               const slug = a.attributes.slug;
               const image = a.attributes.image.data[0].attributes.url;
@@ -86,7 +104,25 @@ export default async function Blog() {
                   key={key}
                 />
               );
-            })}
+            })} */}
+             <BlogCard
+                  image={""}
+                  title={"asdasdasd"}
+                  slug={""}
+                
+                />
+                 <BlogCard
+                  image={""}
+                  title={"asdasdasd"}
+                  slug={""}
+                
+                />
+                 <BlogCard
+                  image={""}
+                  title={"asdasdasd"}
+                  slug={""}
+                
+                />
           </div>
         </div>
         <img

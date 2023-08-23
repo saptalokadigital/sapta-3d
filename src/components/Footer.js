@@ -1,14 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 
-async function getDataInformation() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/informs`);
-  return res.json();
-}
+// async function getDataInformation() {
+// //   const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/informs`);
+// //   return res.json();
+// // }
 
 export default async function Footer() {
-  const dataInformation = await getDataInformation()
-  const information = await dataInformation.data[0].attributes
+  // const dataInformation = await getDataInformation()
+  // const information = await dataInformation.data[0].attributes
 
   return (
     <footer
@@ -23,7 +23,7 @@ export default async function Footer() {
           <h6 className="text-white font-semibold md:text-xl text-xs">
             GET CONNECTED WITH US ON SOCIAL NETWORKS:
           </h6>
-          <Link href={information.instagram_link}>
+          <Link href={""}>
             <Image
               src="/images/logo/sosmed_logo/ig.png"
               width={20}
@@ -32,7 +32,7 @@ export default async function Footer() {
               className="m-3"
             />
           </Link>
-          <Link href={information.whatssap_link}>
+          <Link href={"/"}>
             <Image
               src="/images/logo/sosmed_logo/wa.png"
               width={25}
@@ -41,7 +41,7 @@ export default async function Footer() {
               className="m-3"
             />
           </Link>
-          <Link href={information.facebook_link}>
+          <Link href={"/"}>
             <Image
               src="/images/logo/sosmed_logo/fb.png"
               width={20}
